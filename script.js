@@ -6,6 +6,10 @@ const pen = document.querySelector('#pen');
 const rainbow = document.querySelector('#random');
 const reset = document.querySelector('#reset');
 const grid = document.createElement('div');
+const darkMode = document.querySelector('#dark-mode-btn');
+const body = document.querySelector('body');
+const btn = document.querySelector('button');
+const everything = document.querySelector('*');
 
 function sketch(size) {
 
@@ -68,4 +72,14 @@ apply.addEventListener('click', () => {
     }
 });
 
-sketch(22);
+sketch(26);
+
+darkMode.addEventListener('click', () => {
+    if (darkMode.textContent === "Dark"){
+    darkMode.textContent = "Light";
+    everything.style.cssText = 'filter: invert(0%);'
+    } else {
+        darkMode.textContent = "Dark";
+        everything.style.cssText = 'filter: invert(100%);'
+    }
+})
